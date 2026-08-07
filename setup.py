@@ -167,15 +167,17 @@ def add_mim_extension():
 if __name__ == '__main__':
     add_mim_extension()
     setup(
-        name='mmsegmentation',
+        name='sggd-segformer',
         version=get_version(),
-        description='Open MMLab Semantic Segmentation Toolbox and Benchmark',
+        description=('Structure-guided gated decoding for lightweight '
+                     'bridge crack segmentation'),
         long_description=readme(),
         long_description_content_type='text/markdown',
-        author='MMSegmentation Contributors',
-        author_email='openmmlab@gmail.com',
-        keywords='computer vision, semantic segmentation',
-        url='https://github.com/open-mmlab/mmsegmentation',
+        author='19140103',
+        author_email='19140103@users.noreply.github.com',
+        keywords=('computer vision, semantic segmentation, bridge crack '
+                  'segmentation, MMSegmentation'),
+        url='https://github.com/19140103/SGGD-SegFormer',
         packages=find_packages(exclude=('configs', 'tools', 'demo')),
         include_package_data=True,
         classifiers=[

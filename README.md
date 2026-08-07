@@ -100,6 +100,10 @@ Run threshold sweeping only:
 python scripts/eval_threshold_sweep.py configs/bridge_crack/sggd_segformer_b0_segcodebrim_512x512_binary_bce_tversky.py /path/to/checkpoint.pth --data-root data/SegCODEBRIM_mmseg --split test
 ```
 
+## Attribution and License
+
+This project is built on MMSegmentation and is released under the Apache License 2.0. The original MMSegmentation code is copyrighted by the MMSegmentation Authors. The SGGD decoder, bridge crack experiment configs, dataset preparation utilities, and crack evaluation scripts are provided as additions in this repository.
+
 ## Notes
 
 The decoder source file keeps the historical filename `spg_segformer_head.py` for checkpoint compatibility. The paper-facing class name used in configs is `StructureGuidedGatedDecoderHead`.

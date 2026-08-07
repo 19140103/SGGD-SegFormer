@@ -1,0 +1,8 @@
+SGGD-SegFormer
+
+This repository is based on MMSegmentation and follows the Apache License 2.0.
+The original MMSegmentation code is copyrighted by the MMSegmentation Authors.
+
+SGGD-related additions, bridge crack experiment configurations, dataset
+preparation utilities, and crack evaluation scripts are provided by the author
+of this repository.
