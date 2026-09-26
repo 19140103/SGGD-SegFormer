@@ -1,8 +1,12 @@
-"""Create a stratified DACL10K Crack/ACrack few-shot split for MMSeg.
+"""Create a stratified DACL10K Crack/ACrack split for MMSeg.
 
 The converted source dataset contains only binary crack masks generated from
 the DACL10K Crack and ACrack classes. This script keeps that binary setting and
-creates train/val/test folders for few-shot adaptation experiments.
+creates a train/val/test starting split. For the repeated low-annotation
+protocol used in the manuscript, first create the fixed 587-image test split
+with 20% train and 20% validation settings, then use
+``make_dacl10k_nested_splits.py`` to generate nested repetitions from its
+388-image pool.
 """
 
 from __future__ import annotations

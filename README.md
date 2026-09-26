@@ -1,6 +1,6 @@
 # SGGD-SegFormer
 
-Code release for **Structure-Guided Gated Decoding for Lightweight Bridge Crack Segmentation**.
+Code release for **SGGD: A Structure-Guided Gated Decoder for Lightweight Concrete Bridge Crack Segmentation in Remote Inspection Imagery**.
 
 This repository is a lightweight MMSegmentation-based project for binary bridge crack segmentation. It includes the SGGD decoder implementation, bridge crack experiment configs, dataset preparation utilities, and evaluation scripts.
 
@@ -24,10 +24,6 @@ This repository is a lightweight MMSegmentation-based project for binary bridge 
   - `scripts/eval_threshold_sweep.py`
   - `scripts/eval_structure_metrics.py`
   - `scripts/verify_mmseg_dataset.py`
-
-## What is not included
-
-The repository intentionally does not include unpublished manuscript files, paper PDFs, MDPI templates, paper figures, raw datasets, trained checkpoints, logs, or result folders.
 
 ## Installation
 
@@ -59,12 +55,45 @@ data/
     ann_dir/{train,val,test}/
 ```
 
-Raw datasets are not included. Prepare data with:
+The raw datasets are obtained from their official sources and are not bundled with this repository. Prepare the converted datasets with:
 
 ```bash
 python scripts/prepare_segcodebrim_mmseg.py --raw-root /path/to/SegCODEBRIM --out-root data/SegCODEBRIM_mmseg
-python scripts/prepare_dacl10k_crack_mmseg.py --source-root /path/to/dacl10k --output-root data/dacl10k_crack_mmseg
+python scripts/prepare_dacl10k_crack_mmseg.py --source-root /path/to/dacl10k --output-root data/dacl10k_crack_mmseg_jpg --splits validation --copy-jpg
 ```
+
+The DACL10K conversion merges the `Crack` and `ACrack` annotations into one
+binary crack class. The processed subset used in the manuscript contains 975
+images. It has a fixed 587-image test set and a 388-image sampling pool, with
+112 positive and 276 negative images in that pool.
+
+The fixed-test starting split can be created from the converted validation
+split with:
+
+```bash
+python scripts/make_dacl10k_fewshot_split.py \
+  --source-root data/dacl10k_crack_mmseg_jpg \
+  --output-root data/dacl10k_crack_fewshot20_mmseg \
+  --train-ratio 0.20 --val-ratio 0.20 --seed 20260804
+```
+
+For the repeated low-annotation protocol reported in the manuscript, pass the
+converted source root and this fixed-test split to the nested split generator:
+
+```bash
+python scripts/make_dacl10k_nested_splits.py \
+  --source-root data/dacl10k_crack_mmseg_jpg \
+  --fixed-test-root data/dacl10k_crack_fewshot20_mmseg \
+  --output-root data/dacl10k_repeated_protocol
+```
+
+This creates three paired repetitions with split seeds `20260923`, `20260924`
+and `20260925`. The corresponding fine-tuning seeds are `31001`, `31002` and
+`31003`. Each repetition uses the same 587-image test set and nested
+training/validation subsets of 50/50, 97/97 and 194/194 images. The generated
+data/ tree contains the train/validation roots, while the fixed-test root is
+used separately for final evaluation. Split manifests and an
+experiment_manifest.json are written alongside the generated data.
 
 ## Training
 
@@ -85,6 +114,13 @@ DACL10K low-annotation configs set `load_from = None` by default. To fine-tune f
 ```bash
 python tools/train.py configs/bridge_crack/sggd_segformer_b0_dacl10k_fewshot10_512x512_bce_tversky.py --cfg-options load_from=/path/to/segcodebrim_checkpoint.pth
 ```
+
+Pretrained checkpoints are not committed to this source repository. If the
+paper is accepted, the default SGGD-SegFormer checkpoint and the matched
+SegFormer-B0 baseline checkpoint will be released through a GitHub Release or
+an archival repository, together with the corresponding configs and checksums.
+The source code and configs remain usable without the checkpoints by training
+from the documented initialization settings.
 
 ## Evaluation
 
