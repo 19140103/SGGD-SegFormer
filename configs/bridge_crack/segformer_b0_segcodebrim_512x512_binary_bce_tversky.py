@@ -1,4 +1,4 @@
-﻿_base_ = './segformer_b0_segcodebrim_512x512_binary_bce_dice.py'
+_base_ = './segformer_b0_segcodebrim_512x512_binary_bce_dice.py'
 
 model = dict(
     decode_head=dict(

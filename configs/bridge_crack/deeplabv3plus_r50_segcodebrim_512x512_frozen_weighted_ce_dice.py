@@ -1,4 +1,4 @@
-﻿_base_ = './deeplabv3plus_r50_segcodebrim_512x512_frozen_ce_dice.py'
+_base_ = './deeplabv3plus_r50_segcodebrim_512x512_frozen_ce_dice.py'
 
 model = dict(
     decode_head=dict(

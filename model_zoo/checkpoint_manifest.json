@@ -1,0 +1,863 @@
+{
+  "release": "v1.0.0",
+  "article_doi": "10.1038/s41598-026-80270-1",
+  "format": "PyTorch checkpoint with state_dict and minimal public meta; no optimizer or training paths",
+  "verification": "All exported tensors are exactly equal to the selected original checkpoint tensors.",
+  "metrics_note": "Metrics are the original paper evaluation records, not a new evaluation. ODS thresholds were selected on the evaluation set for reporting; they are not deployment-calibrated thresholds.",
+  "checkpoints": [
+    {
+      "filename": "sggd_segformer_b0_segcodebrim_best.pth",
+      "model": "SGGD-SegFormer",
+      "config": "configs/bridge_crack/sggd_segformer_b0_segcodebrim_512x512_binary_bce_tversky.py",
+      "download_url": "https://github.com/19140103/SGGD-SegFormer/releases/download/v1.0.0/sggd_segformer_b0_segcodebrim_best.pth",
+      "sha256": "ef81fd5a43ff70e383859f21732698230c6fe8e3099f0f590b4291eb46d34f0f",
+      "bytes": 15420256,
+      "original_checkpoint_sha256": "6a7969c67d9998e06e21f57323f16ec0132bf90bca8392c261433b876bc6ba0d",
+      "tensor_entries": 274,
+      "source_iteration": 12000,
+      "dataset_meta": {
+        "classes": [
+          "background",
+          "crack"
+        ],
+        "palette": [
+          [
+            0,
+            0,
+            0
+          ],
+          [
+            255,
+            255,
+            255
+          ]
+        ]
+      },
+      "checkpoint_selection": "best validation mIoU",
+      "training_dataset": "SegCODEBRIM",
+      "training_seed": 20260802,
+      "evaluation_images": 62,
+      "evaluation_size": 512,
+      "ods_threshold": 0.8999999761581421,
+      "ods_f1_percent": 48.53804041877141,
+      "ods_iou_percent": 32.04635708726627,
+      "miou_at_ods_percent": 65.60248676820692,
+      "fixed_precision_percent": 32.54850497668127,
+      "fixed_recall_percent": 71.22861586314151
+    },
+    {
+      "filename": "segformer_b0_segcodebrim_best.pth",
+      "model": "SegFormer-B0",
+      "config": "configs/bridge_crack/segformer_b0_segcodebrim_512x512_binary_bce_tversky.py",
+      "download_url": "https://github.com/19140103/SGGD-SegFormer/releases/download/v1.0.0/segformer_b0_segcodebrim_best.pth",
+      "sha256": "c815567e459a46541524f31dad69679ea3ac574ff762aaa88747f4375442fda1",
+      "bytes": 14948298,
+      "original_checkpoint_sha256": "35fee82cc66a730a14d86ff73575969e4ac1d180c9ccb93c674e12864c69bbb5",
+      "tensor_entries": 192,
+      "source_iteration": 11500,
+      "dataset_meta": {
+        "classes": [
+          "background",
+          "crack"
+        ],
+        "palette": [
+          [
+            0,
+            0,
+            0
+          ],
+          [
+            255,
+            255,
+            255
+          ]
+        ]
+      },
+      "checkpoint_selection": "best validation mIoU",
+      "training_dataset": "SegCODEBRIM",
+      "training_seed": 20260802,
+      "evaluation_images": 62,
+      "evaluation_size": 512,
+      "ods_threshold": 0.8399999737739563,
+      "ods_f1_percent": 47.0198225923244,
+      "ods_iou_percent": 30.735892315657125,
+      "miou_at_ods_percent": 64.93412011651853,
+      "fixed_precision_percent": 31.795380917546247,
+      "fixed_recall_percent": 69.90050190866675
+    },
+    {
+      "filename": "segformer_b0_dacl10k_seed01_pct05.pth",
+      "model": "SegFormer-B0",
+      "config": "configs/bridge_crack/segformer_b0_dacl10k_fewshot05_512x512_bce_tversky.py",
+      "download_url": "https://github.com/19140103/SGGD-SegFormer/releases/download/v1.0.0/segformer_b0_dacl10k_seed01_pct05.pth",
+      "sha256": "f4e43eb5b5158c7c92fc5c6c207bef715775c0c96abc9eef1530f99d56e76560",
+      "bytes": 14949210,
+      "original_checkpoint_sha256": "961d97a40bd10bf88eada2f246da850bf2a7a1a503cd1c0f43b9d2e5e3caf376",
+      "tensor_entries": 192,
+      "source_iteration": 1000,
+      "dataset_meta": {
+        "classes": [
+          "background",
+          "crack"
+        ],
+        "palette": [
+          [
+            0,
+            0,
+            0
+          ],
+          [
+            255,
+            255,
+            255
+          ]
+        ]
+      },
+      "checkpoint_selection": "best validation mIoU",
+      "training_dataset": "DACL10K binary crack subset",
+      "training_annotation_ratio_percent": 5,
+      "repeat": "seed01",
+      "training_seed": 31001,
+      "split_seed": 20260923,
+      "evaluation_images": 587,
+      "evaluation_size": 512,
+      "ods_threshold": 0.05999999865889549,
+      "ods_f1_percent": 28.10654101635317,
+      "ods_iou_percent": 16.35114051607228,
+      "miou_at_ods_percent": 56.954820408118444,
+      "fixed_precision_percent": 38.36226376429216,
+      "fixed_recall_percent": 16.81773299441001
+    },
+    {
+      "filename": "sggd_segformer_b0_dacl10k_seed01_pct05.pth",
+      "model": "SGGD-SegFormer",
+      "config": "configs/bridge_crack/sggd_segformer_b0_dacl10k_fewshot05_512x512_bce_tversky.py",
+      "download_url": "https://github.com/19140103/SGGD-SegFormer/releases/download/v1.0.0/sggd_segformer_b0_dacl10k_seed01_pct05.pth",
+      "sha256": "8e92e7a213059ee6f047a30278cbe07e2b3ce3ccff8e4fd68722c4d9036f4548",
+      "bytes": 15421432,
+      "original_checkpoint_sha256": "e81957b3b7b79a7bd0707e19685166bbc875672d659e1f20975ef613ab015e18",
+      "tensor_entries": 274,
+      "source_iteration": 2500,
+      "dataset_meta": {
+        "classes": [
+          "background",
+          "crack"
+        ],
+        "palette": [
+          [
+            0,
+            0,
+            0
+          ],
+          [
+            255,
+            255,
+            255
+          ]
+        ]
+      },
+      "checkpoint_selection": "best validation mIoU",
+      "training_dataset": "DACL10K binary crack subset",
+      "training_annotation_ratio_percent": 5,
+      "repeat": "seed01",
+      "training_seed": 31001,
+      "split_seed": 20260923,
+      "evaluation_images": 587,
+      "evaluation_size": 512,
+      "ods_threshold": 0.05000000074505806,
+      "ods_f1_percent": 33.803031495233064,
+      "ods_iou_percent": 20.339138432758787,
+      "miou_at_ods_percent": 59.13354740612561,
+      "fixed_precision_percent": 48.518709189593565,
+      "fixed_recall_percent": 19.352679448749612
+    },
+    {
+      "filename": "segformer_b0_dacl10k_seed01_pct10.pth",
+      "model": "SegFormer-B0",
+      "config": "configs/bridge_crack/segformer_b0_dacl10k_fewshot10_512x512_bce_tversky.py",
+      "download_url": "https://github.com/19140103/SGGD-SegFormer/releases/download/v1.0.0/segformer_b0_dacl10k_seed01_pct10.pth",
+      "sha256": "e5da1fc8ae9c02e2eb7936e66b925366c40f1802e0fd06b3e860cc8bd097e14c",
+      "bytes": 14949210,
+      "original_checkpoint_sha256": "e34b55a74292adeb6d6ff271f5beba2ddb03b9a3cda2fca595943ae788a0f41f",
+      "tensor_entries": 192,
+      "source_iteration": 2500,
+      "dataset_meta": {
+        "classes": [
+          "background",
+          "crack"
+        ],
+        "palette": [
+          [
+            0,
+            0,
+            0
+          ],
+          [
+            255,
+            255,
+            255
+          ]
+        ]
+      },
+      "checkpoint_selection": "best validation mIoU",
+      "training_dataset": "DACL10K binary crack subset",
+      "training_annotation_ratio_percent": 10,
+      "repeat": "seed01",
+      "training_seed": 31001,
+      "split_seed": 20260923,
+      "evaluation_images": 587,
+      "evaluation_size": 512,
+      "ods_threshold": 0.2199999988079071,
+      "ods_f1_percent": 37.266286978207226,
+      "ods_iou_percent": 22.90016388504369,
+      "miou_at_ods_percent": 60.51597073236656,
+      "fixed_precision_percent": 49.13794697983648,
+      "fixed_recall_percent": 26.63638923135046
+    },
+    {
+      "filename": "sggd_segformer_b0_dacl10k_seed01_pct10.pth",
+      "model": "SGGD-SegFormer",
+      "config": "configs/bridge_crack/sggd_segformer_b0_dacl10k_fewshot10_512x512_bce_tversky.py",
+      "download_url": "https://github.com/19140103/SGGD-SegFormer/releases/download/v1.0.0/sggd_segformer_b0_dacl10k_seed01_pct10.pth",
+      "sha256": "b26ebc224cc8137ed18c2f5b78952c5e43f763d59722d52765e6b880ae004f26",
+      "bytes": 15421432,
+      "original_checkpoint_sha256": "408e4c1e2b7588d255e944d66832225a9b4611fec5fae06d4cd78985173bbda1",
+      "tensor_entries": 274,
+      "source_iteration": 2500,
+      "dataset_meta": {
+        "classes": [
+          "background",
+          "crack"
+        ],
+        "palette": [
+          [
+            0,
+            0,
+            0
+          ],
+          [
+            255,
+            255,
+            255
+          ]
+        ]
+      },
+      "checkpoint_selection": "best validation mIoU",
+      "training_dataset": "DACL10K binary crack subset",
+      "training_annotation_ratio_percent": 10,
+      "repeat": "seed01",
+      "training_seed": 31001,
+      "split_seed": 20260923,
+      "evaluation_images": 587,
+      "evaluation_size": 512,
+      "ods_threshold": 0.1899999976158142,
+      "ods_f1_percent": 36.55798171879948,
+      "ods_iou_percent": 22.367554012886583,
+      "miou_at_ods_percent": 60.17033854880929,
+      "fixed_precision_percent": 44.42892756184799,
+      "fixed_recall_percent": 26.89675806313182
+    },
+    {
+      "filename": "segformer_b0_dacl10k_seed01_pct20.pth",
+      "model": "SegFormer-B0",
+      "config": "configs/bridge_crack/segformer_b0_dacl10k_fewshot20_512x512_bce_tversky.py",
+      "download_url": "https://github.com/19140103/SGGD-SegFormer/releases/download/v1.0.0/segformer_b0_dacl10k_seed01_pct20.pth",
+      "sha256": "e23a52ca0b24087bec4cedde0d70f7fbf4eeb700775645d02c66e8aaeb2319c0",
+      "bytes": 14949210,
+      "original_checkpoint_sha256": "fa972011f1f0f9886c2165af32f9a675b5bf077b26581ef40ab88ed4254be059",
+      "tensor_entries": 192,
+      "source_iteration": 2500,
+      "dataset_meta": {
+        "classes": [
+          "background",
+          "crack"
+        ],
+        "palette": [
+          [
+            0,
+            0,
+            0
+          ],
+          [
+            255,
+            255,
+            255
+          ]
+        ]
+      },
+      "checkpoint_selection": "best validation mIoU",
+      "training_dataset": "DACL10K binary crack subset",
+      "training_annotation_ratio_percent": 20,
+      "repeat": "seed01",
+      "training_seed": 31001,
+      "split_seed": 20260923,
+      "evaluation_images": 587,
+      "evaluation_size": 512,
+      "ods_threshold": 0.3400000035762787,
+      "ods_f1_percent": 33.037971225833296,
+      "ods_iou_percent": 19.787715487406146,
+      "miou_at_ods_percent": 58.74837540823299,
+      "fixed_precision_percent": 35.24880943630533,
+      "fixed_recall_percent": 29.234141845666894
+    },
+    {
+      "filename": "sggd_segformer_b0_dacl10k_seed01_pct20.pth",
+      "model": "SGGD-SegFormer",
+      "config": "configs/bridge_crack/sggd_segformer_b0_dacl10k_fewshot20_512x512_bce_tversky.py",
+      "download_url": "https://github.com/19140103/SGGD-SegFormer/releases/download/v1.0.0/sggd_segformer_b0_dacl10k_seed01_pct20.pth",
+      "sha256": "7e490169d4c371585269663aaea85cb0994a1501c6c83a71a0cc2719dd12a7dc",
+      "bytes": 15421432,
+      "original_checkpoint_sha256": "3754211875202bab4a920741ad449b4a836d79f8faf261ee94f78ebd46d360a2",
+      "tensor_entries": 274,
+      "source_iteration": 3000,
+      "dataset_meta": {
+        "classes": [
+          "background",
+          "crack"
+        ],
+        "palette": [
+          [
+            0,
+            0,
+            0
+          ],
+          [
+            255,
+            255,
+            255
+          ]
+        ]
+      },
+      "checkpoint_selection": "best validation mIoU",
+      "training_dataset": "DACL10K binary crack subset",
+      "training_annotation_ratio_percent": 20,
+      "repeat": "seed01",
+      "training_seed": 31001,
+      "split_seed": 20260923,
+      "evaluation_images": 587,
+      "evaluation_size": 512,
+      "ods_threshold": 0.3700000047683716,
+      "ods_f1_percent": 30.772128387575393,
+      "ods_iou_percent": 18.1838417598559,
+      "miou_at_ods_percent": 57.816368235245704,
+      "fixed_precision_percent": 30.284749034749037,
+      "fixed_recall_percent": 30.40122949274601
+    },
+    {
+      "filename": "segformer_b0_dacl10k_seed02_pct05.pth",
+      "model": "SegFormer-B0",
+      "config": "configs/bridge_crack/segformer_b0_dacl10k_fewshot05_512x512_bce_tversky.py",
+      "download_url": "https://github.com/19140103/SGGD-SegFormer/releases/download/v1.0.0/segformer_b0_dacl10k_seed02_pct05.pth",
+      "sha256": "78fce822a47a540bbea42926d331d07122db80dbeba20a3ddab52648e9543c89",
+      "bytes": 14949210,
+      "original_checkpoint_sha256": "fddfb26aeeb61d4cc5184c7d2554e56d25df49dfa6d73d390ac0d5bf3f02610d",
+      "tensor_entries": 192,
+      "source_iteration": 3000,
+      "dataset_meta": {
+        "classes": [
+          "background",
+          "crack"
+        ],
+        "palette": [
+          [
+            0,
+            0,
+            0
+          ],
+          [
+            255,
+            255,
+            255
+          ]
+        ]
+      },
+      "checkpoint_selection": "best validation mIoU",
+      "training_dataset": "DACL10K binary crack subset",
+      "training_annotation_ratio_percent": 5,
+      "repeat": "seed02",
+      "training_seed": 31002,
+      "split_seed": 20260924,
+      "evaluation_images": 587,
+      "evaluation_size": 512,
+      "ods_threshold": 0.23000000417232513,
+      "ods_f1_percent": 34.10020699828163,
+      "ods_iou_percent": 20.554701353924187,
+      "miou_at_ods_percent": 59.339854725660146,
+      "fixed_precision_percent": 46.15641507385044,
+      "fixed_recall_percent": 24.888284445328562
+    },
+    {
+      "filename": "sggd_segformer_b0_dacl10k_seed02_pct05.pth",
+      "model": "SGGD-SegFormer",
+      "config": "configs/bridge_crack/sggd_segformer_b0_dacl10k_fewshot05_512x512_bce_tversky.py",
+      "download_url": "https://github.com/19140103/SGGD-SegFormer/releases/download/v1.0.0/sggd_segformer_b0_dacl10k_seed02_pct05.pth",
+      "sha256": "6fde19882c940c59ff30da8065f53125efac5c3bdb6ca0eb6081532f0997ee37",
+      "bytes": 15421432,
+      "original_checkpoint_sha256": "ab8b1b070b150af9c387a3100bc0d3bb328ebffba245fa4f2666fccb5a9de2c7",
+      "tensor_entries": 274,
+      "source_iteration": 3000,
+      "dataset_meta": {
+        "classes": [
+          "background",
+          "crack"
+        ],
+        "palette": [
+          [
+            0,
+            0,
+            0
+          ],
+          [
+            255,
+            255,
+            255
+          ]
+        ]
+      },
+      "checkpoint_selection": "best validation mIoU",
+      "training_dataset": "DACL10K binary crack subset",
+      "training_annotation_ratio_percent": 5,
+      "repeat": "seed02",
+      "training_seed": 31002,
+      "split_seed": 20260924,
+      "evaluation_images": 587,
+      "evaluation_size": 512,
+      "ods_threshold": 0.41999998688697815,
+      "ods_f1_percent": 36.31135615578984,
+      "ods_iou_percent": 22.183185896725362,
+      "miou_at_ods_percent": 60.17205333195095,
+      "fixed_precision_percent": 43.8381631554711,
+      "fixed_recall_percent": 30.773494356670007
+    },
+    {
+      "filename": "segformer_b0_dacl10k_seed02_pct10.pth",
+      "model": "SegFormer-B0",
+      "config": "configs/bridge_crack/segformer_b0_dacl10k_fewshot10_512x512_bce_tversky.py",
+      "download_url": "https://github.com/19140103/SGGD-SegFormer/releases/download/v1.0.0/segformer_b0_dacl10k_seed02_pct10.pth",
+      "sha256": "b7ab808df14db0008d821c945dd0cc98fc1b576a6b0816e12d04a32bd7b57e50",
+      "bytes": 14949210,
+      "original_checkpoint_sha256": "6850b627701c63794c30e14ebfde113261c58eaaec17db82c0aca4e9027c51f8",
+      "tensor_entries": 192,
+      "source_iteration": 3000,
+      "dataset_meta": {
+        "classes": [
+          "background",
+          "crack"
+        ],
+        "palette": [
+          [
+            0,
+            0,
+            0
+          ],
+          [
+            255,
+            255,
+            255
+          ]
+        ]
+      },
+      "checkpoint_selection": "best validation mIoU",
+      "training_dataset": "DACL10K binary crack subset",
+      "training_annotation_ratio_percent": 10,
+      "repeat": "seed02",
+      "training_seed": 31002,
+      "split_seed": 20260924,
+      "evaluation_images": 587,
+      "evaluation_size": 512,
+      "ods_threshold": 0.25999999046325684,
+      "ods_f1_percent": 36.307219672947525,
+      "ods_iou_percent": 22.180098352784384,
+      "miou_at_ods_percent": 60.15081036013639,
+      "fixed_precision_percent": 46.17246810800794,
+      "fixed_recall_percent": 28.180233626081158
+    },
+    {
+      "filename": "sggd_segformer_b0_dacl10k_seed02_pct10.pth",
+      "model": "SGGD-SegFormer",
+      "config": "configs/bridge_crack/sggd_segformer_b0_dacl10k_fewshot10_512x512_bce_tversky.py",
+      "download_url": "https://github.com/19140103/SGGD-SegFormer/releases/download/v1.0.0/sggd_segformer_b0_dacl10k_seed02_pct10.pth",
+      "sha256": "ebd6aa88ecad92b3efb73f07c387ceb6c7b8af0acc9f964a94a8a9dfeda7549e",
+      "bytes": 15421432,
+      "original_checkpoint_sha256": "d699c549c88905f996238c4e742dfb60c14ff5eccffe63b94da09f0b0294fe9b",
+      "tensor_entries": 274,
+      "source_iteration": 3000,
+      "dataset_meta": {
+        "classes": [
+          "background",
+          "crack"
+        ],
+        "palette": [
+          [
+            0,
+            0,
+            0
+          ],
+          [
+            255,
+            255,
+            255
+          ]
+        ]
+      },
+      "checkpoint_selection": "best validation mIoU",
+      "training_dataset": "DACL10K binary crack subset",
+      "training_annotation_ratio_percent": 10,
+      "repeat": "seed02",
+      "training_seed": 31002,
+      "split_seed": 20260924,
+      "evaluation_images": 587,
+      "evaluation_size": 512,
+      "ods_threshold": 0.4099999964237213,
+      "ods_f1_percent": 36.592779019527754,
+      "ods_iou_percent": 22.393611983585913,
+      "miou_at_ods_percent": 60.21679597565905,
+      "fixed_precision_percent": 41.13620144584033,
+      "fixed_recall_percent": 32.527494740084364
+    },
+    {
+      "filename": "segformer_b0_dacl10k_seed02_pct20.pth",
+      "model": "SegFormer-B0",
+      "config": "configs/bridge_crack/segformer_b0_dacl10k_fewshot20_512x512_bce_tversky.py",
+      "download_url": "https://github.com/19140103/SGGD-SegFormer/releases/download/v1.0.0/segformer_b0_dacl10k_seed02_pct20.pth",
+      "sha256": "e60242fe0e31847c6a4196cdd913883b612d320e5dcf4c902910cbe9a58e58d0",
+      "bytes": 14949210,
+      "original_checkpoint_sha256": "fdd96830d45e1d5c2b97b4c07a7ab01348afa572294e92a776cc9c9784370130",
+      "tensor_entries": 192,
+      "source_iteration": 3000,
+      "dataset_meta": {
+        "classes": [
+          "background",
+          "crack"
+        ],
+        "palette": [
+          [
+            0,
+            0,
+            0
+          ],
+          [
+            255,
+            255,
+            255
+          ]
+        ]
+      },
+      "checkpoint_selection": "best validation mIoU",
+      "training_dataset": "DACL10K binary crack subset",
+      "training_annotation_ratio_percent": 20,
+      "repeat": "seed02",
+      "training_seed": 31002,
+      "split_seed": 20260924,
+      "evaluation_images": 587,
+      "evaluation_size": 512,
+      "ods_threshold": 0.18000000715255737,
+      "ods_f1_percent": 31.89481551805725,
+      "ods_iou_percent": 18.97313019604299,
+      "miou_at_ods_percent": 58.285467011472605,
+      "fixed_precision_percent": 37.04116859027205,
+      "fixed_recall_percent": 23.065662516754326
+    },
+    {
+      "filename": "sggd_segformer_b0_dacl10k_seed02_pct20.pth",
+      "model": "SGGD-SegFormer",
+      "config": "configs/bridge_crack/sggd_segformer_b0_dacl10k_fewshot20_512x512_bce_tversky.py",
+      "download_url": "https://github.com/19140103/SGGD-SegFormer/releases/download/v1.0.0/sggd_segformer_b0_dacl10k_seed02_pct20.pth",
+      "sha256": "19e34b162ba93f7611c054b5c929df71fbf35d4dc77fb1b2dfaf1fbc4c6ae886",
+      "bytes": 15421432,
+      "original_checkpoint_sha256": "8bd44d3e0d2bb4451e241e830610b88e413369e53c240b061094f42c9976878b",
+      "tensor_entries": 274,
+      "source_iteration": 3000,
+      "dataset_meta": {
+        "classes": [
+          "background",
+          "crack"
+        ],
+        "palette": [
+          [
+            0,
+            0,
+            0
+          ],
+          [
+            255,
+            255,
+            255
+          ]
+        ]
+      },
+      "checkpoint_selection": "best validation mIoU",
+      "training_dataset": "DACL10K binary crack subset",
+      "training_annotation_ratio_percent": 20,
+      "repeat": "seed02",
+      "training_seed": 31002,
+      "split_seed": 20260924,
+      "evaluation_images": 587,
+      "evaluation_size": 512,
+      "ods_threshold": 0.18000000715255737,
+      "ods_f1_percent": 30.987876436659562,
+      "ods_iou_percent": 18.334706282207193,
+      "miou_at_ods_percent": 57.90361451345232,
+      "fixed_precision_percent": 35.35284322916225,
+      "fixed_recall_percent": 23.382661168387084
+    },
+    {
+      "filename": "segformer_b0_dacl10k_seed03_pct05.pth",
+      "model": "SegFormer-B0",
+      "config": "configs/bridge_crack/segformer_b0_dacl10k_fewshot05_512x512_bce_tversky.py",
+      "download_url": "https://github.com/19140103/SGGD-SegFormer/releases/download/v1.0.0/segformer_b0_dacl10k_seed03_pct05.pth",
+      "sha256": "7e36b6b91b71d377bc3308b0f4020fbe932aa84cbf36b7a3c61cd800a5e8e502",
+      "bytes": 14949210,
+      "original_checkpoint_sha256": "3471be58d3a44eaff3b1eb72d74e708eb1f2f7499079259627934b3c627b9288",
+      "tensor_entries": 192,
+      "source_iteration": 1000,
+      "dataset_meta": {
+        "classes": [
+          "background",
+          "crack"
+        ],
+        "palette": [
+          [
+            0,
+            0,
+            0
+          ],
+          [
+            255,
+            255,
+            255
+          ]
+        ]
+      },
+      "checkpoint_selection": "best validation mIoU",
+      "training_dataset": "DACL10K binary crack subset",
+      "training_annotation_ratio_percent": 5,
+      "repeat": "seed03",
+      "training_seed": 31003,
+      "split_seed": 20260925,
+      "evaluation_images": 587,
+      "evaluation_size": 512,
+      "ods_threshold": 0.14000000059604645,
+      "ods_f1_percent": 22.17900717526236,
+      "ods_iou_percent": 12.472659624121116,
+      "miou_at_ods_percent": 54.942203673342405,
+      "fixed_precision_percent": 30.102839091534538,
+      "fixed_recall_percent": 15.424888083914807
+    },
+    {
+      "filename": "sggd_segformer_b0_dacl10k_seed03_pct05.pth",
+      "model": "SGGD-SegFormer",
+      "config": "configs/bridge_crack/sggd_segformer_b0_dacl10k_fewshot05_512x512_bce_tversky.py",
+      "download_url": "https://github.com/19140103/SGGD-SegFormer/releases/download/v1.0.0/sggd_segformer_b0_dacl10k_seed03_pct05.pth",
+      "sha256": "2c238d8353f2f0a808d145512bb508d46aff1bd13e33e502a265273f7b72daa7",
+      "bytes": 15421432,
+      "original_checkpoint_sha256": "5ef4c24baf1f59fb5e4a2e08043b81558aab32a7dbb9031334c8bb00926be160",
+      "tensor_entries": 274,
+      "source_iteration": 500,
+      "dataset_meta": {
+        "classes": [
+          "background",
+          "crack"
+        ],
+        "palette": [
+          [
+            0,
+            0,
+            0
+          ],
+          [
+            255,
+            255,
+            255
+          ]
+        ]
+      },
+      "checkpoint_selection": "best validation mIoU",
+      "training_dataset": "DACL10K binary crack subset",
+      "training_annotation_ratio_percent": 5,
+      "repeat": "seed03",
+      "training_seed": 31003,
+      "split_seed": 20260925,
+      "evaluation_images": 587,
+      "evaluation_size": 512,
+      "ods_threshold": 0.3799999952316284,
+      "ods_f1_percent": 19.08856858386666,
+      "ods_iou_percent": 10.551333563858131,
+      "miou_at_ods_percent": 53.69123740381605,
+      "fixed_precision_percent": 17.628242631665454,
+      "fixed_recall_percent": 20.60382949130219
+    },
+    {
+      "filename": "segformer_b0_dacl10k_seed03_pct10.pth",
+      "model": "SegFormer-B0",
+      "config": "configs/bridge_crack/segformer_b0_dacl10k_fewshot10_512x512_bce_tversky.py",
+      "download_url": "https://github.com/19140103/SGGD-SegFormer/releases/download/v1.0.0/segformer_b0_dacl10k_seed03_pct10.pth",
+      "sha256": "5f3218df61b8eadfb94711fd5bc9df7c5a021e9ac6dd4808106a8a88c9812d89",
+      "bytes": 14949210,
+      "original_checkpoint_sha256": "46f38e84339b24af9cee262830d52385f701c3c96433921d30cdc8422ef44752",
+      "tensor_entries": 192,
+      "source_iteration": 2000,
+      "dataset_meta": {
+        "classes": [
+          "background",
+          "crack"
+        ],
+        "palette": [
+          [
+            0,
+            0,
+            0
+          ],
+          [
+            255,
+            255,
+            255
+          ]
+        ]
+      },
+      "checkpoint_selection": "best validation mIoU",
+      "training_dataset": "DACL10K binary crack subset",
+      "training_annotation_ratio_percent": 10,
+      "repeat": "seed03",
+      "training_seed": 31003,
+      "split_seed": 20260925,
+      "evaluation_images": 587,
+      "evaluation_size": 512,
+      "ods_threshold": 0.11999999731779099,
+      "ods_f1_percent": 31.647145126699392,
+      "ods_iou_percent": 18.798104226100875,
+      "miou_at_ods_percent": 58.32467772469106,
+      "fixed_precision_percent": 42.65871696005847,
+      "fixed_recall_percent": 20.832554606466868
+    },
+    {
+      "filename": "sggd_segformer_b0_dacl10k_seed03_pct10.pth",
+      "model": "SGGD-SegFormer",
+      "config": "configs/bridge_crack/sggd_segformer_b0_dacl10k_fewshot10_512x512_bce_tversky.py",
+      "download_url": "https://github.com/19140103/SGGD-SegFormer/releases/download/v1.0.0/sggd_segformer_b0_dacl10k_seed03_pct10.pth",
+      "sha256": "d2b56d8ac52c01a3373efc055ca7439f78078be3a3db61027c4b1c6327a70907",
+      "bytes": 15421432,
+      "original_checkpoint_sha256": "d6c460f3380a98f5bc87d3fce28059978ea5482d61d1fc8c2d75c3e064d04ea7",
+      "tensor_entries": 274,
+      "source_iteration": 2000,
+      "dataset_meta": {
+        "classes": [
+          "background",
+          "crack"
+        ],
+        "palette": [
+          [
+            0,
+            0,
+            0
+          ],
+          [
+            255,
+            255,
+            255
+          ]
+        ]
+      },
+      "checkpoint_selection": "best validation mIoU",
+      "training_dataset": "DACL10K binary crack subset",
+      "training_annotation_ratio_percent": 10,
+      "repeat": "seed03",
+      "training_seed": 31003,
+      "split_seed": 20260925,
+      "evaluation_images": 587,
+      "evaluation_size": 512,
+      "ods_threshold": 0.17000000178813934,
+      "ods_f1_percent": 35.00738567314373,
+      "ods_iou_percent": 21.217547110195394,
+      "miou_at_ods_percent": 59.55444254701086,
+      "fixed_precision_percent": 42.67422013535143,
+      "fixed_recall_percent": 25.770177581810437
+    },
+    {
+      "filename": "segformer_b0_dacl10k_seed03_pct20.pth",
+      "model": "SegFormer-B0",
+      "config": "configs/bridge_crack/segformer_b0_dacl10k_fewshot20_512x512_bce_tversky.py",
+      "download_url": "https://github.com/19140103/SGGD-SegFormer/releases/download/v1.0.0/segformer_b0_dacl10k_seed03_pct20.pth",
+      "sha256": "e8eb34638b705d9c3af8b75cf15d901bdc3bf74cdbe7cd337c11024b2d34ba2a",
+      "bytes": 14949210,
+      "original_checkpoint_sha256": "32bddad8a87f42885b8eb887f8ce5022963e0b11f6de99dc99ecfa7717d7b543",
+      "tensor_entries": 192,
+      "source_iteration": 500,
+      "dataset_meta": {
+        "classes": [
+          "background",
+          "crack"
+        ],
+        "palette": [
+          [
+            0,
+            0,
+            0
+          ],
+          [
+            255,
+            255,
+            255
+          ]
+        ]
+      },
+      "checkpoint_selection": "best validation mIoU",
+      "training_dataset": "DACL10K binary crack subset",
+      "training_annotation_ratio_percent": 20,
+      "repeat": "seed03",
+      "training_seed": 31003,
+      "split_seed": 20260925,
+      "evaluation_images": 587,
+      "evaluation_size": 512,
+      "ods_threshold": 0.18000000715255737,
+      "ods_f1_percent": 21.97659731469419,
+      "ods_iou_percent": 12.344779946455969,
+      "miou_at_ods_percent": 54.476712119822324,
+      "fixed_precision_percent": 21.9627571090815,
+      "fixed_recall_percent": 19.30603604897116
+    },
+    {
+      "filename": "sggd_segformer_b0_dacl10k_seed03_pct20.pth",
+      "model": "SGGD-SegFormer",
+      "config": "configs/bridge_crack/sggd_segformer_b0_dacl10k_fewshot20_512x512_bce_tversky.py",
+      "download_url": "https://github.com/19140103/SGGD-SegFormer/releases/download/v1.0.0/sggd_segformer_b0_dacl10k_seed03_pct20.pth",
+      "sha256": "612155061ae431f31482970d1a7720972f934ba1ed8e3102ac5a12a025a3ba9e",
+      "bytes": 15421432,
+      "original_checkpoint_sha256": "61acdd8cfe057e70943a2f05671fd40f2eb1107bc667a0a17fda64cd7a9103f0",
+      "tensor_entries": 274,
+      "source_iteration": 500,
+      "dataset_meta": {
+        "classes": [
+          "background",
+          "crack"
+        ],
+        "palette": [
+          [
+            0,
+            0,
+            0
+          ],
+          [
+            255,
+            255,
+            255
+          ]
+        ]
+      },
+      "checkpoint_selection": "best validation mIoU",
+      "training_dataset": "DACL10K binary crack subset",
+      "training_annotation_ratio_percent": 20,
+      "repeat": "seed03",
+      "training_seed": 31003,
+      "split_seed": 20260925,
+      "evaluation_images": 587,
+      "evaluation_size": 512,
+      "ods_threshold": 0.14000000059604645,
+      "ods_f1_percent": 21.732415956769323,
+      "ods_iou_percent": 12.190896103409985,
+      "miou_at_ods_percent": 54.25670740907255,
+      "fixed_precision_percent": 21.163154418776287,
+      "fixed_recall_percent": 19.688888924538762
+    }
+  ]
+}

@@ -1,4 +1,4 @@
-﻿# dataset settings
+# dataset settings
 dataset_type = 'BaseSegDataset'
 data_root = 'data/dacl10k_crack_fewshot10_mmseg'
 crop_size = (512, 512)

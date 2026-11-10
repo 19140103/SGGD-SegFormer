@@ -1,4 +1,4 @@
-﻿_base_ = [
+_base_ = [
     '../_base_/models/segformer_mit-b0.py',
     '../_base_/datasets/segcodebrim_512x512.py',
     '../_base_/default_runtime.py',

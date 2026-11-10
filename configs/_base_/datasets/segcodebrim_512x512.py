@@ -1,4 +1,4 @@
-﻿# dataset settings
+# dataset settings
 dataset_type = 'BaseSegDataset'
 data_root = 'data/SegCODEBRIM_mmseg'
 crop_size = (512, 512)

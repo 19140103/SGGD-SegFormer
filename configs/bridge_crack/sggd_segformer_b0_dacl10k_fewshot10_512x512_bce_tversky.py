@@ -1,4 +1,4 @@
-﻿_base_ = './sggd_segformer_b0_segcodebrim_512x512_binary_bce_tversky.py'
+_base_ = './sggd_segformer_b0_segcodebrim_512x512_binary_bce_tversky.py'
 
 load_from = None  # Set to a SegCODEBRIM pretrained checkpoint for target-domain fine-tuning.
 

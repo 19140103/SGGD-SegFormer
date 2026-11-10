@@ -2,6 +2,8 @@
 
 Code release for **SGGD: A Structure-Guided Gated Decoder for Lightweight Concrete Bridge Crack Segmentation in Remote Inspection Imagery**.
 
+Article DOI: [10.1038/s41598-026-80270-1](https://doi.org/10.1038/s41598-026-80270-1).
+
 This repository is a lightweight MMSegmentation-based project for binary bridge crack segmentation. It includes the SGGD decoder implementation, bridge crack experiment configs, dataset preparation utilities, and evaluation scripts.
 
 ## What is included
@@ -31,7 +33,7 @@ Create an environment following the MMSegmentation requirements, then install th
 
 ```bash
 pip install -U openmim
-mim install "mmengine>=0.7.0" "mmcv>=2.0.0"
+mim install "mmengine>=0.7.0" "mmcv>=2.0.0,<2.2.0"
 pip install -e .
 ```
 
@@ -115,26 +117,33 @@ DACL10K low-annotation configs set `load_from = None` by default. To fine-tune f
 python tools/train.py configs/bridge_crack/sggd_segformer_b0_dacl10k_fewshot10_512x512_bce_tversky.py --cfg-options load_from=/path/to/segcodebrim_checkpoint.pth
 ```
 
-Pretrained checkpoints are not committed to this source repository. If the
-paper is accepted, the default SGGD-SegFormer checkpoint and the matched
-SegFormer-B0 baseline checkpoint will be released through a GitHub Release or
-an archival repository, together with the corresponding configs and checksums.
-The source code and configs remain usable without the checkpoints by training
-from the documented initialization settings.
+## Released model weights
+
+The trained weights are provided as assets of
+[release v1.0.0](https://github.com/19140103/SGGD-SegFormer/releases/tag/v1.0.0),
+not as large binaries in Git history. The release includes the default
+SGGD-SegFormer and matched SegFormer-B0 SegCODEBRIM checkpoints, plus all 18
+selected DACL10K checkpoints from the three paired fine-tuning repetitions.
+
+See the [model zoo](model_zoo/README.md) for download links, matching configs,
+reported metrics, exact split identifiers, and SHA-256 checksums. Exported
+weights preserve every original state-dictionary tensor and omit optimizer
+state, training logs and machine-specific paths. They support inference and
+fine-tuning, but do not include the state needed to resume an optimizer exactly.
 
 ## Evaluation
 
-Run one-pass evaluation with ODS threshold sweeping, fixed-threshold metrics, complexity, and FPS:
+Run the paper's 512x512 evaluation with ODS threshold sweeping,
+fixed-threshold metrics, complexity, and FPS:
 
 ```bash
-python scripts/evaluate_crack_model_once.py configs/bridge_crack/sggd_segformer_b0_segcodebrim_512x512_binary_bce_tversky.py /path/to/checkpoint.pth --data-root data/SegCODEBRIM_mmseg --split test
+python scripts/evaluate_crack_model_resized.py configs/bridge_crack/sggd_segformer_b0_segcodebrim_512x512_binary_bce_tversky.py /path/to/checkpoint.pth --model-name SGGD-SegFormer --data-root data/SegCODEBRIM_mmseg --split test --img-suffix .png --eval-size 512
 ```
 
-Run threshold sweeping only:
-
-```bash
-python scripts/eval_threshold_sweep.py configs/bridge_crack/sggd_segformer_b0_segcodebrim_512x512_binary_bce_tversky.py /path/to/checkpoint.pth --data-root data/SegCODEBRIM_mmseg --split test
-```
+For the DACL10K fixed test set, use `--img-suffix .jpg` and its fixed-test
+data root. The model zoo includes a complete command. Legacy original-size
+evaluation utilities are also retained, but they do not reproduce the paper's
+512x512 evaluation protocol.
 
 ## Attribution and License
 

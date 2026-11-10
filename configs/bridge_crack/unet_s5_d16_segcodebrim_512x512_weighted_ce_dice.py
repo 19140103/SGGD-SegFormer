@@ -1,4 +1,4 @@
-﻿_base_ = './unet_s5_d16_segcodebrim_512x512_ce_dice.py'
+_base_ = './unet_s5_d16_segcodebrim_512x512_ce_dice.py'
 
 model = dict(
     decode_head=dict(

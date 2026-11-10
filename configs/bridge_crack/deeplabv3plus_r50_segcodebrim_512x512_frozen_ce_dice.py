@@ -1,4 +1,4 @@
-﻿_base_ = [
+_base_ = [
     '../_base_/models/deeplabv3plus_r50-d8.py',
     '../_base_/datasets/segcodebrim_512x512.py',
     '../_base_/default_runtime.py',

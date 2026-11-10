@@ -1,4 +1,4 @@
-﻿_base_ = './sggd_segformer_b0_dacl10k_fewshot10_512x512_bce_tversky.py'
+_base_ = './sggd_segformer_b0_dacl10k_fewshot10_512x512_bce_tversky.py'
 
 data_root = 'data/dacl10k_crack_fewshot05_mmseg'
 
